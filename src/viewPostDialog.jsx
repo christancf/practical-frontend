@@ -22,35 +22,6 @@ export default function ViewPostDialog({
 
   async function handleSubmit(e) {
     e.preventDefault()
-
-    // setCircleNameError(false)
-    // setCategoryError(false)
-
-    // if (circleName === '') {
-    //   setCircleNameError(true)
-    // }
-    // if (category === '') {
-    //   setCategoryError(true)
-    // }
-    // if (circleName && category) {
-    //   const data = {
-    //     name: circleName,
-    //     description: circleDescription,
-    //     category,
-    //     admin: {
-    //       _id: user._id,
-    //       username: user.username,
-    //       email: user.email,
-    //     },
-    //   }
-    //   const result = await createCircle(data)
-    //   console.log('result', result)
-    //   setCircleName('')
-    //   setCircleDescription('')
-    //   setCategory('')
-    //   handleClose()
-    //   setCircleData(prevState => [...prevState, data])
-    //   setFollow(prevState => [...prevState, data])
   }
 
   return (
@@ -71,7 +42,7 @@ export default function ViewPostDialog({
           </Typography>
           {data.comments.map(comment => (
             <Typography
-              key={comment.id}
+              key={comment._id}
               variant="body1"
               color="text.secondary"
               gutterBottom

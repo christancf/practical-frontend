@@ -24,19 +24,19 @@ const Home = () => {
   const [error, setError] = useState(false)
   const [isDialogOpened, setIsDialogOpened] = useState(false)
 
-  // useEffect(() => {
-  //   getPosts()
-  //     .then(data => {
-  //       setPosts(data)
-  //       console.log(data)
-  //       setLoading(false)
-  //     })
-  //     .catch(error => {
-  //       setError(true)
-  //       setLoading(false)
-  //       setPosts([])
-  //     })
-  // }, [posts])
+  useEffect(() => {
+    getPosts()
+      .then(data => {
+        setPosts(data)
+        console.log(data)
+        setLoading(false)
+      })
+      .catch(error => {
+        setError(true)
+        setLoading(false)
+        setPosts([])
+      })
+  }, [])
 
   if (loading)
     return (
@@ -88,11 +88,11 @@ const Home = () => {
             setPosts={setPosts}
           />
           {/* posts */}
-          {/* <Box>
+          <Box>
             {posts.map(post => (
               <Post key={post._id} data={post} />
             ))}
-          </Box> */}
+          </Box>
         </Box>
       </>
     )
